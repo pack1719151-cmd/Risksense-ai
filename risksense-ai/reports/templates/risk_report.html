@@ -1,0 +1,56 @@
+<!-- risk_report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f8fafc; }
+        h1 { color: #2c3e50; }
+        .summary {
+            margin-bottom: 30px;
+            padding: 16px;
+            background: #e3eafc;
+            border-left: 6px solid #3b82f6;
+            font-size: 1.1em;
+        }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; background: #fff; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .severity-High { color: #dc2626; font-weight: bold; }
+        .severity-Medium { color: #f59e42; font-weight: bold; }
+        .severity-Low { color: #16a34a; font-weight: bold; }
+        .status-Open { color: #dc2626; }
+        .status-Closed { color: #16a34a; }
+    </style>
+</head>
+<body>
+    <h1>Risk Report</h1>
+    <div class="summary">
+        <strong>Total Risks:</strong> {{ risks|length }}<br>
+        <strong>Open:</strong> {{ risks|selectattr('status', 'equalto', 'Open')|list|length }},
+        <strong>Closed:</strong> {{ risks|selectattr('status', 'equalto', 'Closed')|list|length }}
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Risk ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for risk in risks %}
+            <tr>
+                <td>{{ risk.id }}</td>
+                <td>{{ risk.description }}</td>
+                <td class="severity-{{ risk.severity }}">{{ risk.severity }}</td>
+                <td class="status-{{ risk.status }}">{{ risk.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

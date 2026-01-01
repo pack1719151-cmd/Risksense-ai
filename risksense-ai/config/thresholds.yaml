@@ -1,0 +1,18 @@
+# thresholds.yaml
+# Thresholds for alerts, risk, and anomaly detection
+alerts:
+  critical: "unmatched"
+  high: "unmatched"
+  medium: "unmatched"
+  low: "unmatched"
+
+risk:
+  max_score: "unmatched"
+  min_score: "unmatched"
+  warning_threshold: "unmatched"
+  danger_threshold: "unmatched"
+
+anomaly_detection:
+  sensitivity: "unmatched"
+  min_support: "unmatched"
+  threshold: "unmatched"

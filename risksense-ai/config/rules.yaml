@@ -1,0 +1,11 @@
+# rules.yaml
+# Business and AI rules configuration
+rules:
+  - name: "Universal Suitability"
+    description: "Ensure all AI and business rules are inclusive and suitable for all nations."
+    enabled: true
+    criteria:
+      - "No bias towards any country, culture, or region"
+      - "Comply with international standards and regulations"
+      - "Support multiple languages and localization"
+      - "Promote fairness, equality, and respect"
