@@ -51,3 +51,4 @@ class PDFReportGenerator:
                     self.add_section(heading, "")
                 self.add_table(data, col_widths, align)
         self.pdf.output(output_path)
+        

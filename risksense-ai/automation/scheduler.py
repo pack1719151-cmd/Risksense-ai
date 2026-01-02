@@ -8,6 +8,3 @@ if __name__ == "__main__":
         run_pipeline()
         time.sleep(86400)  # run daily
 # --- IGNORE ---
-- --- IGNORE ---
-- --- IGNORE ---
-- --- IGNORE ---

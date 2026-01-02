@@ -28,7 +28,7 @@ class ModelRegistry:
     def unregister_model(self, name: str):
         if name in self.models:
             del self.models[name]
-            MODEL_DIR / f"{name}.joblib").unlink(missing_ok=True)
+            (MODEL_DIR / f"{name}.joblib").unlink(missing_ok=True)
     def model_info(self, name: str) -> dict:
         if name in self.models:
             model = self.models[name]

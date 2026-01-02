@@ -1,5 +1,5 @@
-import jsonschema
-from jsonschema import validate, ValidationError
+import jsonschema   # pyright: ignore[reportMissingModuleSource]
+from jsonschema import validate, ValidationError, SchemaError
 
 # schema_validator.py
 # Validates data schema for incoming data
@@ -19,7 +19,7 @@ class SchemaValidator:
             # Optionally log the error with details for debugging
             # logger.error(f"Schema validation error: {e.message}")
             return False
-        except jsonschema.SchemaError as e:
+        except SchemaError as e:
             # Handle invalid schema definitions
             # logger.error(f"Invalid schema: {e.message}")
             return False
